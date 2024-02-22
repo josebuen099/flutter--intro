@@ -6,14 +6,14 @@ abstract class mamifero extends animales{}
 abstract class ave extends animales{}
 abstract class pez extends animales{}
 //clasificacion 
-abstract class volador{
-  void volar()=> print('vuela');
+mixin class volador {
+  void volar() => print('vuela');
 }
-abstract class nadador{
-  void nadar()=> print('nada');
+mixin class nadador {
+  void nadar() => print('nada');
 }
-abstract class caminante{
-  void camina()=> print('caminar');
+mixin class caminante {
+  void camina() => print('caminar');
 }
 
 
@@ -31,4 +31,7 @@ class pezVolador extends pez with nadador,volador{}
 void main() {
   final flipper =Delfin();
 flipper.nadar();
+
+final otto =Gato();
+otto.camina();
 }
