@@ -42,6 +42,7 @@ class plantaNuclear extends energyPlant {
 
   void consumoEnergia(double cantidad) {
     energiaRestante += cantidad;
+    energiaRestante==null	;
   }
 }
 //las clases abstractas no se pueden llamar a si mismas 
