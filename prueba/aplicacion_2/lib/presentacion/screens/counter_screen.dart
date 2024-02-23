@@ -10,6 +10,7 @@ class CounterScreen extends StatelessWidget {
         title: const Text('contador material 3'),
       ),
       body: const Center(
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
