@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jbmensaje/config/themes/Themes_customs.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -10,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
+      theme: ThemesCustoms(selectColor: 2).theme(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Material App Bar'),
