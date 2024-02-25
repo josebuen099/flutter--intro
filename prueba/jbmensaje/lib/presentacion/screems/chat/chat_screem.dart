@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:jbmensaje/presentacion/widgets/her_messaje_bubble.dart';
 import 'package:jbmensaje/presentacion/widgets/my_messaje_bubble.dart';
+import 'package:jbmensaje/presentacion/widgets/send_messaje.dart';
+
 class ChatScreem extends StatelessWidget {
   const ChatScreem({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         leading: const Padding(
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
-            backgroundImage: NetworkImage('https://play-lh.googleusercontent.com/YrM89YlemAyWGo718U2aFPi7UkJ11jwcg5bXLB5yF6lkr4izUtYoce60KEYPn4zfZzs=s256-rw'),
+            backgroundImage: NetworkImage(
+                'https://play-lh.googleusercontent.com/YrM89YlemAyWGo718U2aFPi7UkJ11jwcg5bXLB5yF6lkr4izUtYoce60KEYPn4zfZzs=s256-rw'),
           ),
         ),
         title: const Text('ChatGptJB'),
         centerTitle: true,
-
       ),
       body: _ChatView(),
     );
@@ -24,28 +26,20 @@ class ChatScreem extends StatelessWidget {
 }
 
 class _ChatView extends StatelessWidget {
- 
-
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric( horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
-            Expanded(child: ListView.builder(
-              itemBuilder:(context, index) {
-
+            Expanded(child: ListView.builder(itemBuilder: (context, index) {
               return (index % 2 == 0)
-              ? const HerMessajeBubbe()
-              : const MyMessajeBubbe();
-              
-            })
-            ),
-            
-            Text('mundo')
+                  ? const HerMessajeBubbe()
+                  : const MyMessajeBubbe();
+            })),
+            const SendMessaje(),
           ],
-        
         ),
       ),
     );

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HerMessajeBubbe extends StatelessWidget {
-const HerMessajeBubbe({super.key});
+  const HerMessajeBubbe({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final colors =Theme.of(context).colorScheme;
+    final colors = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        
         Container(
           decoration: BoxDecoration(
             color: colors.secondary,
@@ -17,46 +16,45 @@ const HerMessajeBubbe({super.key});
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: Text("lores dipsum sonne adfghgrerta",style: TextStyle(color: Colors.black),),
+            child: Text(
+              "lores dipsum sonne adfghgrerta",
+              style: TextStyle(color: Colors.black),
+            ),
           ),
         ),
-        const SizedBox(height: 5,),
-        //Todo:Imagen 
+        const SizedBox(
+          height: 5,
+        ),
+        //Todo:Imagen
         _ImagenBubble(),
-        const SizedBox(height: 10,),
-
+        const SizedBox(
+          height: 10,
+        ),
       ],
-      
     );
   }
 }
-class _ImagenBubble extends StatelessWidget {
-  
 
+class _ImagenBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    final size =MediaQuery.of(context).size;
-    return  ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Image.network('https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif', 
-      width: size.width*0.7,
-      height: 150,
-      fit: BoxFit.cover,
-
-      loadingBuilder: (context, child, loadingProgress) {
-        if(loadingProgress==null)return child;
-        return Container(
-          width: size.width*0.7,
-      height: 150,
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
-      child: const Text('prueba de carga '),
-
-
-
-        );
-        
-      },
-      ));
+    final size = MediaQuery.of(context).size;
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.network(
+          'https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif',
+          width: size.width * 0.7,
+          height: 150,
+          fit: BoxFit.cover,
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return Container(
+              width: size.width * 0.7,
+              height: 150,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              child: const Text('prueba de carga '),
+            );
+          },
+        ));
   }
 }
