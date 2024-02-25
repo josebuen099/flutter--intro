@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jbmensaje/config/themes/Themes_customs.dart';
+import 'package:jbmensaje/presentacion/screems/chat/chat_screem.dart';
 
 
 void main() => runApp(const MyApp());
@@ -12,19 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      theme: ThemesCustoms(selectColor: 2).theme(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: Center(
-          child:FilledButton.tonal(
-            onPressed: () { 
-              
-             }, 
-             child: const Text('hellou madafakers'),),
-        ),
-      ),
+      theme: ThemesCustoms(selectColor: 7).theme(),
+      home: const ChatScreem(),
     );
   }
 }
