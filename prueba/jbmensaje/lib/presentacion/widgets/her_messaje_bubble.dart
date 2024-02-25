@@ -17,7 +17,7 @@ const HerMessajeBubbe({super.key});
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: Text('HOLAa',style: TextStyle(color: Colors.black),),
+            child: Text("lores dipsum sonne adfghgrerta",style: TextStyle(color: Colors.black),),
           ),
         ),
         const SizedBox(height: 5,),
@@ -35,8 +35,28 @@ class _ImagenBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final size =MediaQuery.of(context).size;
     return  ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network('https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif'));
+      child: Image.network('https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif', 
+      width: size.width*0.7,
+      height: 150,
+      fit: BoxFit.cover,
+
+      loadingBuilder: (context, child, loadingProgress) {
+        if(loadingProgress==null)return child;
+        return Container(
+          width: size.width*0.7,
+      height: 150,
+      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+      child: const Text('prueba de carga '),
+
+
+
+        );
+        
+      },
+      ));
   }
 }
