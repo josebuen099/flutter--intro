@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class SendMessaje extends StatelessWidget {
@@ -5,19 +6,49 @@ class SendMessaje extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final color =Theme.of(context).colorScheme;
 
-    final OutlineInputBorder = UnderlineInputBorder(
+    final textxControl = TextEditingController();
+    final focustext = FocusNode();
+    // final color =Theme.of(context).colorScheme;
+     final OutlineInputBorder = UnderlineInputBorder(
         borderRadius: BorderRadius.circular(40),
         borderSide: const BorderSide(color: Colors.transparent));
-    return TextFormField(
-        decoration: InputDecoration(
+
+
+    final customDecoration =InputDecoration(
+      hintText: 'INGRESA TU PREGUNTA "?"',
             enabledBorder: OutlineInputBorder,
             focusedBorder: OutlineInputBorder,
             filled: true,
             suffixIcon: IconButton(
               icon: const Icon(Icons.send_rounded),
-              onPressed: () {},
-            )));
+            
+              onPressed: () {
+                final textValue = textxControl.value.text;
+
+                print('$textValue');
+                  textxControl.clear();
+
+
+              },
+            ));
+
+   
+    return TextFormField(
+      onTapOutside: (event){
+        focustext.unfocus();
+      },
+
+    
+      focusNode: focustext,
+      controller: textxControl,
+        decoration: customDecoration,
+        onFieldSubmitted: (value){
+          print ('mensaje: $value');
+          textxControl.clear();
+          focustext.requestFocus();
+
+        },
+    );
   }
 }
