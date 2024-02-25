@@ -15,9 +15,9 @@ const MyMessajeBubbe({super.key});
             color: colors.primary,
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: const Text('HOLA',style: TextStyle(color: Colors.white),),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Text('HOLA',style: TextStyle(color: Colors.black)),
           ),
         ),
         const SizedBox(height: 10,)
